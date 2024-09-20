@@ -12,7 +12,7 @@ def test_home(client):
     assert response.status_code == 200
     assert response.json == {'version': '1.0'}
 
-# Fahrenheit to Celsius
+# Fahrenheit to Celsius method
 @pytest.mark.parametrize("temp, expected", [(212, 100.0), (32, 0.0), (-40, -40.0)])
 def test_convert_temp_f_to_c(client, temp, expected):
     response = client.get(f'/convert-temp?temp={temp}&scale=fahrenheit&target_scale=celsius')
